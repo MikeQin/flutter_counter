@@ -1,4 +1,4 @@
-# state_manage
+# Flutter Counter App for State Management
 
 This Flutter Counter App shows how to user Provider for State Management.
 
