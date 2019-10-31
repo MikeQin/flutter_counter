@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:state_manage/counter.dart';
+import 'package:flutter_counter/counter.dart';
 
 void main() => runApp(CounterApp());
 
