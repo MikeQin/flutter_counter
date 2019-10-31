@@ -11,15 +11,6 @@ class CounterApp extends StatelessWidget {
     return MaterialApp(
       title: 'Counter App',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
         primarySwatch: Colors.blue,
       ),
       home: ChangeNotifierProvider<Counter>(
@@ -28,10 +19,24 @@ class CounterApp extends StatelessWidget {
   }
 }
 
-class Home extends StatelessWidget {
+class CounterText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final counter = Provider.of<Counter>(context);
+    print('CounterText called');
+    return Text(
+      '${counter.count}',
+      style: Theme.of(context).textTheme.display3,
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    final counter = Provider.of<Counter>(context, listen: false);
+
+    print('Home called');
 
     return Scaffold(
       appBar: AppBar(
@@ -48,10 +53,7 @@ class Home extends StatelessWidget {
             SizedBox(
               height: 40.0,
             ),
-            Text(
-              '${counter.count}',
-              style: Theme.of(context).textTheme.display3,
-            ),
+            CounterText(),
             SizedBox(
               height: 40.0,
             ),
