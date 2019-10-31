@@ -1,6 +1,6 @@
 # Flutter Counter App for State Management
 
-This Flutter Counter App shows how to user Provider for State Management.
+This Flutter Counter App shows how to use `Provider` for State Management.
 
 - Dependency: `provider: ^3.1.0+1`
 
